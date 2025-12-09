@@ -4,7 +4,6 @@ plugins {
 }
 
 group = 'com.actionwatch'
-version = '1.0-SNAPSHOT'
 
 sourceCompatibility = '11'
 targetCompatibility = '11'
@@ -21,6 +20,11 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.0'
     implementation 'com.fasterxml.jackson.core:jackson-annotations:2.17.0'
     implementation 'com.fasterxml.jackson.core:jackson-core:2.17.0'
+    implementation 'org.json:json:20230618'
+
+    // Java time support
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.17.0'
+
 }
 
 application {
@@ -34,4 +38,5 @@ jar {
     from {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
