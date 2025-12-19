@@ -5,8 +5,6 @@ plugins {
 
 group = 'com.actionwatch'
 
-sourceCompatibility = '11'
-targetCompatibility = '11'
 
 repositories {
     mavenCentral()
